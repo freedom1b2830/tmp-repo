@@ -35,6 +35,10 @@ iptables_standard_mark_vpn_service(){
 save(){
     iptables-save -f /etc/iptables/iptables.rules
 }
+#сбрасываем
+clearRules
+
+
 #разрешаем соедиения внутри пк и в vpn
 iptables -A OUTPUT -o lo -j ACCEPT
 iptables -A OUTPUT -o tun+ -j ACCEPT
