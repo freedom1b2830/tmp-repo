@@ -2,8 +2,8 @@
 declare -a arr_vpn=()
 
 
-clearRules(){# очищаем правила, запрещаем соединения
-    iptables -F
+clearRules(){ # очищаем правила, запрещаем соединения
+        iptables -F
         iptables -X
         iptables -t nat -F
         iptables -t nat -X
@@ -45,6 +45,9 @@ iptables -A OUTPUT -o tun+ -j ACCEPT
 
 #добавляем ip vpn сервиса
 #append_vpn_serviceList ip
+
+#разрешаем адреса vpn
+iptables_standard_mark_vpn_service
 
 #логирование
 iptables -A OUTPUT  -j LOG --log-level 7 --log-prefix "OUT:DROP " --log-uid
