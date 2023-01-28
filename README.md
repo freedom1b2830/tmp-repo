@@ -19,7 +19,7 @@ clearRules(){# очищаем правила, запрещаем соедине�
 # (ВРЕМЕННО ОТКЛЮЧЕН DROP)
 # РАЗРЕШЕН ACCEPT
 #        iptables -P OUTPUT DROP
-#        iptables -P OUTPUT ACCEPT
+        iptables -P OUTPUT ACCEPT
 }
 append_vpn_serviceList(){
      arr_vpn=(${arr_vpn[@]} ''$1) #SEE FIX
